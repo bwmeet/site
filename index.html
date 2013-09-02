@@ -8,10 +8,9 @@
 	<link rel="stylesheet" href="animations.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
-	<meta name="viewport" content="initial-scale=1"
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-
 	<main role="main">
 			
 			<div id="poster">
@@ -19,14 +18,10 @@
 				<div id="frame" class="day">
 
 					<div id="back">
-
-						<div id="clouds" class="hidden">
-						</div>
-
+						
 						<div id="stars" class="hidden">
-
+						
 						</div>
-
 						<div id="grades">
 							<span></span>
 							<span></span>
@@ -35,7 +30,9 @@
 							<span></span>
 							<span></span>
 						</div>
-
+						<div class="clouds">
+							
+						</div>
 					</div>
 
 					<section id="content">
@@ -43,7 +40,7 @@
 						<header>
 							
 							<div id="logo">
-								<img src="assets/images/logo.png" alt="B &amp; W Meet logo" title="Made by Ole Dean." width="200">
+								<img src="assets/images/logo.png" alt="B &amp; W Meet logo" width="200">
 							</div>
 
 							<div id="balloon">
@@ -62,10 +59,10 @@
 							</section>
 					
 							<section id="hashtag">
-								<a href="https://twitter.com/search?q=%23BWMeet&amp;src=typd" target="_blank">&#35;BWMeet</a>
+								<a href="https://twitter.com/search?q=%23BWMeet&src=typd" target="_blank">&#35;BWMeet</a>
 							</section>
 						
-						</footer>
+						<footer>
 
 					</section>
 				
@@ -80,12 +77,11 @@
 						<li class="active"><a>What's it all about?</a></li>
 						<li><a>Who are you guys?</a></li>
 						<li><a>What's with the poster?</a></li>
-						<li><a>Our sponsor</a></li>
 					</ul>
 				</nav>
 
 				<article class="active">
-					<p>B &amp; W Meet is an informal pub meet for Bournemouth-based digital creatives.<br>We hold them every 6 weeks or so and &ndash; thanks to our <a href="http://www.campaignmonitor.com/">wonder sponsor</a>, each one has free drinks (up to a point).</p>
+					<p>B &amp; W Meet is an informal pub meet for Bournemouth-based digital creatives.<br>We hold them every 6 weeks or so and - thanks to our wonder sponsor, each one has free drinks (up to a point).</p>
 
 					<p>It doesn't matter where you're from or how experienced you are as long as you're passionate about the web.</p>
 					
@@ -93,20 +89,14 @@
 				</article>
 
 				<article>
-					<p>B &amp; W Meet is run by <a href="http://twitter.com/seanmtracey" target="_blank">Sean Tracey</a> and <a href="http://twitter.com/timofetimo" target="_blank">Tim Stone</a>. We love building for the web and we love meeting people &ndash; that's why B &amp; W Meet is a thing.</p>
+					<p>B &amp; W Meet is run by <a href="http://twitter.com/seanmtracey" target="_blank">Sean Tracey</a> and <a href="http://twitter.com/timofetimo" target="_blank">Tim Stone</a>. We love building for the web and we love meeting people - That's why B &amp; W Meet is a thing.</p>
 				</article>
 
 				<article>
-					<p>The B &amp; W Meet website doesn't have to say a whole lot. It's because of this that we've had the same site for over a year (a little embarrassing for Web Developers :P).</p>
-					<p>So, rather than just updating the same old site for each new event, we thought we'd make the<br>B &amp; W Meet site more like a paper poster &ndash; but with all the goodness of the web.</p>
-					<p>Like a print run, each B &amp; W Meet event will have a different site that will (try to) show off either some of the latest cool stuff on the internet or something that we love about Bournemouth/Dorset.</p>
-					<p>Now, the problem with building a website around the new and shiny of the web is that not everyone can see it. We promise we'll always do our best to make sure the site fails gracefully and gives you the info you need.</p>
-				</article>
-				
-				<article>
-					<p>And now, a word from our sponsor:</p>
-					<p><a href="http://www.campaignmonitor.com/">Campaign Monitor</a> makes it easy to attract new subscribers, send them beautiful email newsletters and see stunning reports on the results. Built from the ground up for creative professionals, you can also rebrand the app, manage all your clients from a single account and let them send campaigns at prices you set.</p>
-					<p><em>They're also tremendously nice people</em></p>
+					<p>The B &amp; W Meet website doesn't have to say a whole lot. It's because of this that we've had the same site for over a year (A little embarrassing for Web Developers :P).</p>
+					<p>So, rather than just updating the same old site for each new event, we thought we'd make the<br>B &amp; W Meet site more like a paper poster - but with all the goodness of the web.</p>
+					<p>Like a print run, Each B &amp; W Meet event will have a different site that will (try to) show off either some of the latest cool stuff on the internet, or something that we love about Bournemouth/Dorset.</p>
+					<p>Now, the problem with building a website around the new and shiny of the web is that not everyone can see it, We promise we'll always do our best to make sure the site fails gracefully and gives you the info you need.</p>
 				</article>
 
 
@@ -117,13 +107,19 @@
 			</div>
 
 	</main>
-<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="scripts/core.js"></script>
-	<script>
-  var _gaq=[['_setAccount','UA-11418004-2'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<svg version="1.1" class="cloud hide" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="841.89px" height="595.28px" viewBox="0 0 841.89 595.28" enable-background="new 0 0 841.89 595.28" xml:space="preserve">
+	<ellipse fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="425.5" cy="188" rx="170.5" ry="101"/>
+	<ellipse fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="295.566" cy="218.961" rx="72" ry="58"/>
+	<ellipse fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="601" cy="211.829" rx="72" ry="58"/>
+	<ellipse fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="421" cy="297.829" rx="72" ry="58"/>
+	<ellipse fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="497.5" cy="99.715" rx="72" ry="58"/>
+	<ellipse fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="349.5" cy="289" rx="72" ry="58"/>
+	<ellipse fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="529" cy="276.961" rx="72" ry="58"/>
+	<ellipse fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="379.991" cy="111.866" rx="72" ry="58"/>
+	<ellipse fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="327" cy="150.546" rx="72" ry="58"/>
+	<ellipse fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" cx="553.575" cy="141.112" rx="72" ry="58"/>
+</svg>
 </body>
 </html>

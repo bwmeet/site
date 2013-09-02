@@ -249,7 +249,53 @@ main{
 	padding-bottom: 50px;
 }
 
-@media only screen and (max-width: 685px) {
+/* weather */
+.clouds {
+	position: relative;
+}
+.cloud {
+	position: absolute;
+}
+
+.cloud:nth-child(2) {
+	left: 0;
+}
+
+.cloud:nth-child(3) {
+	left: 20%;
+}
+
+.cloud:nth-child(4) {
+	left: 50%;	
+}
+
+.night .cloud ellipse,
+.heavy-cloud .cloud ellipse {
+	fill: darkgray;
+	stroke: darkgray;
+}
+
+@keyframes drifting {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: 200%;
+	}
+}
+
+.hide {
+	display: none;
+}
+
+.lightning {
+	background: white;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+@media only screen and (max-width: 42.8125em) {
 	#information nav ul li {
 		padding: 0.5em 0;
 		display: block;

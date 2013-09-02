@@ -104,23 +104,104 @@ var bwMeet = (function(){
 		}
 	}
 	
-	var weather = (function() {
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+	var weather = (function(condition) {
+		var condition, weatherData;
+
+		var cloudFactory = function (options) {
+			var clouds = document.querySelector('.clouds');
+
+			for (var i = 0, len = options.amount; i < len; i++) {
+				console.log(len);
+				var c = document.querySelectorAll('.cloud');
+
+				var cloud = c[c.length - 1].cloneNode(true);
+				cloud.classList.remove('hide');
+				clouds.appendChild(cloud);
+				
+				var y = getRandomInt(0, 3),
+					x = getRandomInt(0, 7);
+				
+				for (var i = 0; i < y; i++) {
+					$(cloud).find('ellipse').eq(x).remove();
+				}
+				
+				if (options.animate && options.comeFromRight) {
+					cloud.style.left = '77%';
+				}
+				
+	    		if (i >= 3 || options.heavy) {
+	    			clouds.className += ' heavy-cloud';
+	    		}
+	    		
+	    		var speed = options.comeFromRight ? weatherData.wind.speed * 20000 : weatherData.wind.speed * 10000;
+				
+				if (options.animate) {
+		    		$(cloud).animate({left:'-76%'}, speed, function() {
+		    		    $(this).remove();
+		    		});
+	    		}
+	    	}
+	    	
+	    	if (options.animate) {
+		    	var timeout = (weatherData.wind.speed * 10000 / 2) + getRandomInt(1000, 10000);
+		
+		    	setTimeout(function() {
+		    		cloudFactory({
+			    		animate: true,
+			    		comeFromRight: true
+		    		});
+		    	}, timeout);
+	    	}
+		};
+
 		var get = function() {
 			$.ajax({
 			    type: 'POST',
 			    dataType: 'jsonp',
-			    url: 'http://api.openweathermap.org/data/2.5/weather?q=Bournemouth,uk&callback=bwMeet.weather.set',
+			    url: 'http://api.openweathermap.org/data/2.5/weather?q=Bournemouth,uk&callback=?',
 			    success: function(data) {
-			        //console.log(typeof data.weather[0].id);
 			        /* wind = data.wind.deg & data.wind.speed */
 			        /* status id's found at http://openweathermap.org/wiki/API/Weather_Condition_Codes */
-			        var condition = data.weather[0].id;
+			        condition = data.weather[0].id;
+			        weatherData = data;
+
 			        if (condition >= 801 && condition <= 804) {
 			        	//cloudy
+			        	cloudFactory({
+			        		animate: true,
+			        		amount: condition - 800
+			        	});
+			        	
 			        } else if ((condition >= 300 && condition <= 321) || (condition >= 500 && condition <= 522)) {
 			        	//drizzle/rain
+			        	cloudFactory({
+			        		animate: false,
+			        		amount: 4
+			        	});
+			        	
 			        } else if (condition >= 200 && condition <= 232) {
 			        	//thunder
+			        	var int = (condition - 199 + 10) * 1000;
+			        	
+			        	setInterval(function() {
+			        		var lightning = document.createElement('div');
+			        		lightning.className = 'lightning';
+			        		document.getElementById('back').appendChild(lightning);
+			        		$(lightning).fadeOut(200, function () {
+			        			$(lightning).remove();
+			        			//clearInterval(int);
+			        		});
+			        	}, int);
+			        	
+			        	cloudFactory({
+			        		amount: 4,
+			        		heavy: true
+			        	});
+			        	console.log(int);
 			        } else {
 			        	//clear
 			        }
@@ -140,7 +221,8 @@ var bwMeet = (function(){
 			set: set
 		};
 	})();
-	
+
+	weather.get();
 
 	function menu(){
 		nav = document.getElementsByTagName('nav')[0];
