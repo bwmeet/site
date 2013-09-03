@@ -84,24 +84,36 @@ var bwMeet = (function(){
 			hour = timeDate.getHours(),
 			check;
 
-		if (hour < 5 || hour >= 21){
-			//console.log("Nighttime");
-			check = timeGrades.night;
-		} else if(hour >= 5 && hour <= 9){
-			//console.log("Dawn");
-			check = timeGrades.dawn;
-		} else if(hour > 9 && hour <= 18){
-			//console.log("Day");
-			check = timeGrades.day;
-		} else if(hour > 18  && hour < 21){
-			//console.log("Dusk");
-			check = timeGrades.dusk;
-		}
+		$.ajax({
+		    type: 'POST',
+		    dataType: 'jsonp',
+		    url: 'http://api.openweathermap.org/data/2.5/weather?q=Bournemouth,uk&callback=?',
+		    success: function(data) {
+		    	console.log(data);
+		    	var sunrise = new Date(data.sys.sunrise * 1000);
+		    	var sunset = new Date(data.sys.sunset * 1000);
+		    	//debugger;
+		    	console.log(sunset, sunrise);
+				if (hour < sunset.getHours() + 2 || hour >= sunrise.getHours() - 2){
+					//console.log("Nighttime");
+					check = timeGrades.night;
+				} else if(hour >= sunrise.getHours() - 1 && hour <= sunrise.getHours() + 1){
+					//console.log("Dawn");
+					check = timeGrades.dawn;
+				} else if(hour > sunrise.getHours() + 1 && hour <= sunset.getHours() - 2){
+					//console.log("Day");
+					check = timeGrades.day;
+				} else if(hour > sunset.getHours() - 1 && hour < sunset.getHours() + 1){
+					//console.log("Dusk");
+					check = timeGrades.dusk;
+				}
 
-		if(check !== currentGrade){
-			transitionGrade(currentGrade, check);
-			currentGrade = check;
-		}
+				if(check !== currentGrade){
+					transitionGrade(currentGrade, check);
+					currentGrade = check;
+				}
+			}
+		});
 	}
 	
 	function getRandomInt(min, max) {
@@ -110,8 +122,6 @@ var bwMeet = (function(){
 
 	var weather = (function(condition) {
 		var condition, weatherData;
-
-
 
 		var rainFactory = function(options) {
 			var i = options.amount,
