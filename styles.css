@@ -252,20 +252,22 @@ main{
 /* weather */
 .clouds {
 	position: relative;
+	top: -15%;
 }
+
 .cloud {
 	position: absolute;
 }
 
-.cloud:nth-child(2) {
+.cloud:nth-of-type(2) {
 	left: 0;
 }
 
-.cloud:nth-child(3) {
+.cloud:nth-of-type(3) {
 	left: 20%;
 }
 
-.cloud:nth-child(4) {
+.cloud:nth-of-type(4) {
 	left: 50%;	
 }
 
@@ -293,6 +295,19 @@ main{
 	position: absolute;
 	height: 100%;
 	width: 100%;
+}
+
+.drop {
+	background: -webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
+	background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+	background: linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+	width: 1px;
+	height: 30px;
+	position: absolute;
+	bottom: 200px;
+	-webkit-animation: fall 0.63s linear infinite;
+	-moz-animation: fall 0.63s linear infinite;
+	animation: fall 0.63s linear infinite;
 }
 
 @media only screen and (max-width: 42.8125em) {

@@ -58,3 +58,12 @@
 		transform: translate(0px, 0px);
 	}
 }
+
+/* animate the drops*/
+@-webkit-keyframes fall {
+	to {margin-top:900px;}
+}
+@-moz-keyframes fall {
+	to {margin-top:900px;}
+}
+

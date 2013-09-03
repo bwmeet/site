@@ -111,11 +111,29 @@ var bwMeet = (function(){
 	var weather = (function(condition) {
 		var condition, weatherData;
 
+
+
+		var rainFactory = function(options) {
+			var i = options.amount,
+				back = document.getElementsByClassName('clouds')[0],
+				cloud = document.getElementsByClassName('cloud')[0];
+
+			while (i--) {
+				var dropLeft = getRandomInt(0, 1600),
+					dropTop = getRandomInt(-1000, 1400),
+					drop = document.createElement('span');
+
+				drop.className = 'drop';
+				drop.style.left = dropLeft + 'px';
+				drop.style.top = dropTop + 'px';
+				back.insertBefore(drop, cloud);
+			}
+		};
+
 		var cloudFactory = function (options) {
 			var clouds = document.querySelector('.clouds');
 
 			for (var i = 0, len = options.amount; i < len; i++) {
-				console.log(len);
 				var c = document.querySelectorAll('.cloud');
 
 				var cloud = c[c.length - 1].cloneNode(true);
@@ -168,6 +186,15 @@ var bwMeet = (function(){
 			        /* status id's found at http://openweathermap.org/wiki/API/Weather_Condition_Codes */
 			        condition = data.weather[0].id;
 			        weatherData = data;
+			        
+			        if (location.search.indexOf('rain') > -1)
+			        	condition = 300;
+
+			        if (location.search.indexOf('cloudy') > -1)
+			        	condition = 803;
+
+			        if (location.search.indexOf('lightning') > -1)
+			        	condition = 200;
 
 			        if (condition >= 801 && condition <= 804) {
 			        	//cloudy
@@ -181,6 +208,15 @@ var bwMeet = (function(){
 			        	cloudFactory({
 			        		animate: false,
 			        		amount: 4
+			        	});
+
+			        	//this attempts to normalise the condition so if it's
+			        	//in the 300 range then 300 - 299 = 1 * 100 = 100
+			        	//in the 500 range then 500 - 499 = 1 * 100 = 100
+			        	var modifier = condition < 400 ? 299 : 499; 
+
+			        	rainFactory({
+			        		amount: Math.abs((condition - modifier) * 100)
 			        	});
 			        	
 			        } else if (condition >= 200 && condition <= 232) {
@@ -201,6 +237,14 @@ var bwMeet = (function(){
 			        		amount: 4,
 			        		heavy: true
 			        	});
+
+			        	if ((condition >= 200 && condition <= 202) || (condition >= 230 && condition <= 232)) {
+			        		var modifier = condition < 220 ? 199 : 229; 
+
+				        	rainFactory({
+				        		amount: Math.abs((condition - modifier) * 100)
+				        	});
+			        	}
 			        	console.log(int);
 			        } else {
 			        	//clear
