@@ -39,7 +39,6 @@ var bwMeet = (function(){
 	}
 
 	function transitionGrade(from, to){
-
 		var length = 3,
 			frameRate = 60,
 			delay = 1000 / frameRate;
@@ -89,21 +88,45 @@ var bwMeet = (function(){
 		    dataType: 'jsonp',
 		    url: 'http://api.openweathermap.org/data/2.5/weather?q=Bournemouth,uk&callback=?',
 		    success: function(data) {
-		    	var sunrise = new Date(data.sys.sunrise * 1000);
-		    	var sunset = new Date(data.sys.sunset * 1000);
-				if (hour >= sunset.getHours() + 2 && hour >= sunrise.getHours() - 2){
+		    	var sunrise = new Date(data.sys.sunrise * 1000).getHours();
+		    	var sunset = new Date(data.sys.sunset * 1000).getHours();
+
+				if (hour >= sunset + 2 || hour <= sunrise - 2) {
 					//console.log("Nighttime");
 					check = timeGrades.night;
-				} else if(hour >= sunrise.getHours() - 1 && hour <= sunrise.getHours() + 1){
+				} else if(hour >= sunrise - 1 && hour <= sunrise + 1){
 					//console.log("Dawn");
 					check = timeGrades.dawn;
-				} else if(hour > sunrise.getHours() + 1 && hour <= sunset.getHours() - 2){
-					//console.log("Day");
-					check = timeGrades.day;
-				} else if(hour > sunset.getHours() - 1 && hour < sunset.getHours() + 1){
+				} else if(hour >= sunset - 1 && hour <= sunset + 1){
 					//console.log("Dusk");
 					check = timeGrades.dusk;
+				} else if(hour >= sunrise + 2 || hour <= sunset - 2){
+					//console.log("Day");
+					check = timeGrades.day;
+				} 
+
+				if(check !== currentGrade){
+					transitionGrade(currentGrade, check);
+					currentGrade = check;
 				}
+			},
+			error: function(data) {
+		    	var sunrise = 7;
+		    	var sunset = 19;
+
+				if (hour >= sunset + 2 || hour <= sunrise - 2) {
+					//console.log("Nighttime");
+					check = timeGrades.night;
+				} else if(hour >= sunrise - 1 && hour <= sunrise + 1){
+					//console.log("Dawn");
+					check = timeGrades.dawn;
+				} else if(hour >= sunset - 1 && hour <= sunset + 1){
+					//console.log("Dusk");
+					check = timeGrades.dusk;
+				} else if(hour >= sunrise + 2 || hour <= sunset - 2){
+					//console.log("Day");
+					check = timeGrades.day;
+				} 
 
 				if(check !== currentGrade){
 					transitionGrade(currentGrade, check);
