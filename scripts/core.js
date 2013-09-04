@@ -89,12 +89,9 @@ var bwMeet = (function(){
 		    dataType: 'jsonp',
 		    url: 'http://api.openweathermap.org/data/2.5/weather?q=Bournemouth,uk&callback=?',
 		    success: function(data) {
-		    	console.log(data);
 		    	var sunrise = new Date(data.sys.sunrise * 1000);
 		    	var sunset = new Date(data.sys.sunset * 1000);
-		    	//debugger;
-		    	console.log(sunset, sunrise);
-				if (hour < sunset.getHours() + 2 || hour >= sunrise.getHours() - 2){
+				if (hour >= sunset.getHours() + 2 && hour >= sunrise.getHours() - 2){
 					//console.log("Nighttime");
 					check = timeGrades.night;
 				} else if(hour >= sunrise.getHours() - 1 && hour <= sunrise.getHours() + 1){
