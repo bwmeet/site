@@ -180,11 +180,13 @@ var bwMeet = (function(){
 	    		if (i >= 3 || options.heavy) {
 	    			clouds.className += ' heavy-cloud';
 	    		}
-	    		
-	    		var speed = options.comeFromRight ? weatherData.wind.speed * 20000 : weatherData.wind.speed * 10000;
+
+	    		//speed returned in metres per second, lets say 0.5 px = 1 metre so
+	    		var distance = $(cloud).offset().left;
+	    		var time = distance / weatherData.wind.speed * 500;
 				
 				if (options.animate) {
-		    		$(cloud).animate({left:'-76%'}, speed, function() {
+		    		$(cloud).animate({left:'-76%'}, time, function() {
 		    		    $(this).remove();
 		    		});
 	    		}
