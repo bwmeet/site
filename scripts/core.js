@@ -92,7 +92,6 @@ var bwMeet = (function(){
 			check;
 
 		var findGrade = function(sunrise, sunset) {
-			hour = 12; 
 			if (hour >= sunset + 2 || hour <= sunrise - 2) {
 				//console.log("Nighttime");
 				check = timeGrades.night;
