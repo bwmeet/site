@@ -310,6 +310,16 @@ main{
 	animation: fall 0.63s linear infinite;
 }
 
+.sun {
+	-moz-animation: spin 500s linear infinite; /* Firefox */
+	-webkit-animation: spin 500s linear infinite; /* Safari and Chrome */
+	-o-animation: spin 500s linear infinite; /* Opera */
+	animation: spin 500s linear infinite;
+	transform-origin: 30% 50%;
+	position: relative;
+	top: -30%;
+}
+
 @media only screen and (max-width: 42.8125em) {
 	#information nav ul li {
 		padding: 0.5em 0;

@@ -61,9 +61,27 @@
 
 /* animate the drops*/
 @-webkit-keyframes fall {
-	to {margin-top:900px;}
+	to {
+		margin-top:900px;
+	}
 }
 @-moz-keyframes fall {
-	to {margin-top:900px;}
+	to {
+		margin-top:900px;
+	}
 }
 
+@keyframes fall {
+	to {
+		margin-top:900px;
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}

@@ -77,11 +77,42 @@ var bwMeet = (function(){
 		}
 	}
 
+	function sun () {
+		var sun = document.getElementsByClassName('sun')[0].cloneNode(true);
+		var back = document.getElementById('back');
+
+		sun.classList.remove('hide');
+
+		back.appendChild(sun);
+	}
+
 	function checkToday(time){
 
-		var timeDate = new Date(),
-			hour = timeDate.getHours(),
+		var hour = new Date().getHours(),
 			check;
+
+		var findGrade = function(sunrise, sunset) {
+			hour = 12; 
+			if (hour >= sunset + 2 || hour <= sunrise - 2) {
+				//console.log("Nighttime");
+				check = timeGrades.night;
+			} else if (hour >= sunrise - 1 && hour <= sunrise + 1){
+				//console.log("Dawn");
+				check = timeGrades.dawn;
+			} else if (hour >= sunset - 1 && hour <= sunset + 1){
+				//console.log("Dusk");
+				check = timeGrades.dusk;
+			} else if (hour >= sunrise + 2 || hour <= sunset - 2){
+				//console.log("Day");
+				check = timeGrades.day;
+				sun();
+			} 
+
+			if (check !== currentGrade){
+				transitionGrade(currentGrade, check);
+				currentGrade = check;
+			}
+		};
 
 		$.ajax({
 		    type: 'POST',
@@ -91,47 +122,13 @@ var bwMeet = (function(){
 		    	var sunrise = new Date(data.sys.sunrise * 1000).getHours();
 		    	var sunset = new Date(data.sys.sunset * 1000).getHours();
 
-				if (hour >= sunset + 2 || hour <= sunrise - 2) {
-					//console.log("Nighttime");
-					check = timeGrades.night;
-				} else if(hour >= sunrise - 1 && hour <= sunrise + 1){
-					//console.log("Dawn");
-					check = timeGrades.dawn;
-				} else if(hour >= sunset - 1 && hour <= sunset + 1){
-					//console.log("Dusk");
-					check = timeGrades.dusk;
-				} else if(hour >= sunrise + 2 || hour <= sunset - 2){
-					//console.log("Day");
-					check = timeGrades.day;
-				} 
-
-				if(check !== currentGrade){
-					transitionGrade(currentGrade, check);
-					currentGrade = check;
-				}
+				findGrade(sunrise, sunset);
 			},
 			error: function(data) {
 		    	var sunrise = 7;
 		    	var sunset = 19;
 
-				if (hour >= sunset + 2 || hour <= sunrise - 2) {
-					//console.log("Nighttime");
-					check = timeGrades.night;
-				} else if(hour >= sunrise - 1 && hour <= sunrise + 1){
-					//console.log("Dawn");
-					check = timeGrades.dawn;
-				} else if(hour >= sunset - 1 && hour <= sunset + 1){
-					//console.log("Dusk");
-					check = timeGrades.dusk;
-				} else if(hour >= sunrise + 2 || hour <= sunset - 2){
-					//console.log("Day");
-					check = timeGrades.day;
-				} 
-
-				if(check !== currentGrade){
-					transitionGrade(currentGrade, check);
-					currentGrade = check;
-				}
+				findGrade(sunrise, sunset);
 			}
 		});
 	}
@@ -251,7 +248,7 @@ var bwMeet = (function(){
 			        	
 			        } else if (condition >= 200 && condition <= 232) {
 			        	//thunder
-			        	var int = (condition - 199 + 10) * 1000;
+			        	var interval = (condition - 199 + 10) * 1000;
 			        	
 			        	setInterval(function() {
 			        		var lightning = document.createElement('div');
@@ -259,9 +256,8 @@ var bwMeet = (function(){
 			        		document.getElementById('back').appendChild(lightning);
 			        		$(lightning).fadeOut(200, function () {
 			        			$(lightning).remove();
-			        			//clearInterval(int);
 			        		});
-			        	}, int);
+			        	}, interval);
 			        	
 			        	cloudFactory({
 			        		amount: 4,
@@ -275,7 +271,6 @@ var bwMeet = (function(){
 				        		amount: Math.abs((condition - modifier) * 100)
 				        	});
 			        	}
-			        	console.log(int);
 			        } else {
 			        	//clear
 			        }
