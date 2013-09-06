@@ -77,10 +77,9 @@ var bwMeet = (function(){
 		}
 	}
 
-	function sun () {
+	function initThermonuclearFusion () {
 		var sun = document.getElementsByClassName('sun')[0].cloneNode(true);
 		var back = document.getElementById('back');
-
 		sun.classList.remove('hide');
 
 		back.appendChild(sun);
@@ -92,6 +91,7 @@ var bwMeet = (function(){
 			check;
 
 		var findGrade = function(sunrise, sunset) {
+			hour = 12;
 			if (hour >= sunset + 2 || hour <= sunrise - 2) {
 				//console.log("Nighttime");
 				check = timeGrades.night;
@@ -104,7 +104,7 @@ var bwMeet = (function(){
 			} else if (hour >= sunrise + 2 || hour <= sunset - 2){
 				//console.log("Day");
 				check = timeGrades.day;
-				sun();
+				initThermonuclearFusion();
 			} 
 
 			if (check !== currentGrade){
@@ -163,6 +163,7 @@ var bwMeet = (function(){
 				var c = document.querySelectorAll('.cloud');
 
 				var cloud = c[c.length - 1].cloneNode(true);
+
 				cloud.classList.remove('hide');
 				clouds.appendChild(cloud);
 				
@@ -186,19 +187,22 @@ var bwMeet = (function(){
 	    		var time = distance / weatherData.wind.speed * 500;
 				
 				if (options.animate) {
-		    		$(cloud).animate({left:'-76%'}, time, function() {
+		    		$(cloud).animate({left:-window.innerWidth + 'px'}, time, 'linear', function() {
 		    		    $(this).remove();
 		    		});
 	    		}
 	    	}
 	    	
 	    	if (options.animate) {
-		    	var timeout = (weatherData.wind.speed * 10000 / 2) + getRandomInt(1000, 10000);
-		
+		    	var distance = $('.cloud:first-of-type').offset().left,
+	    			time = (distance / weatherData.wind.speed * 500) / 2,
+		    		timeout = time + getRandomInt(1000, 10000);
+
 		    	setTimeout(function() {
 		    		cloudFactory({
 			    		animate: true,
-			    		comeFromRight: true
+			    		comeFromRight: true,
+			    		amount: options.amount
 		    		});
 		    	}, timeout);
 	    	}
