@@ -91,7 +91,6 @@ var bwMeet = (function(){
 			check;
 
 		var findGrade = function(sunrise, sunset) {
-			hour = 12;
 			if (hour >= sunset + 2 || hour <= sunrise - 2) {
 				//console.log("Nighttime");
 				check = timeGrades.night;
@@ -175,7 +174,7 @@ var bwMeet = (function(){
 				}
 				
 				if (options.animate && options.comeFromRight) {
-					cloud.style.left = '77%';
+					cloud.style.left = window.innerWidth + 'px';
 				}
 				
 	    		if (i >= 3 || options.heavy) {
