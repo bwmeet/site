@@ -91,6 +91,7 @@ var bwMeet = (function(){
 			check;
 
 		var findGrade = function(sunrise, sunset) {
+			hour = 12;
 			if (hour >= sunset + 2 || hour <= sunrise - 2) {
 				//console.log("Nighttime");
 				check = timeGrades.night;
@@ -178,7 +179,8 @@ var bwMeet = (function(){
 				}
 				
 	    		if (i >= 3 || options.heavy) {
-	    			clouds.className += ' heavy-cloud';
+	    			if (clouds.className.indexOf('heavy-cloud') === -1)
+	    				clouds.className += ' heavy-cloud';
 	    		}
 
 	    		//speed returned in metres per second, lets say 0.5 px = 1 metre so

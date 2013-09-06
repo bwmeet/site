@@ -316,8 +316,8 @@ main{
 	-o-animation: spin 500s linear infinite; /* Opera */
 	animation: spin 500s linear infinite;
 	transform-origin: 30% 50%;
-	position: relative;
-	top: -30%;
+	position: absolute;
+	top: -50%;
 }
 
 @media only screen and (max-width: 42.8125em) {
