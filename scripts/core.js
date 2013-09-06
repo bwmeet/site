@@ -187,7 +187,7 @@ var bwMeet = (function(){
 	    		var time = distance / weatherData.wind.speed * 500;
 				
 				if (options.animate) {
-		    		$(cloud).animate({left:-window.innerWidth + 'px'}, time, 'linear', function() {
+		    		$(cloud).animate({left:-(window.innerWidth + $(cloud).width()) + 'px'}, time, 'linear', function() {
 		    		    $(this).remove();
 		    		});
 	    		}
