@@ -155,8 +155,17 @@ var bwMeet = (function(){
 			}
 		};
 
+		//cloud is 882px
+
 		var cloudFactory = function (options) {
-			var clouds = document.querySelector('.clouds');
+			var clouds = document.getElementsByClassName('clouds')[0];
+
+			var frameWidth = document.getElementById('frame').clientWidth;
+
+			//console.log(882 / frameWidth * 100) // = 1 clouds percentage coverage
+
+			var from = weatherData.wind.deg > 180 ? -frameWidth : frameWidth, 
+				to = weatherData.wind.deg > 180 ? frameWidth : -frameWidth;
 
 			for (var i = 0, len = options.amount; i < len; i++) {
 				var c = document.querySelectorAll('.cloud');
@@ -173,8 +182,8 @@ var bwMeet = (function(){
 					$(cloud).find('ellipse').eq(x).remove();
 				}
 				
-				if (options.animate && options.comeFromRight) {
-					cloud.style.left = window.innerWidth + 'px';
+				if (options.animate /* && options.comeFromRight */ ) {
+					cloud.style.left = from + 'px';
 				}
 				
 	    		if (i >= 3 || options.heavy) {
@@ -184,10 +193,10 @@ var bwMeet = (function(){
 
 	    		//speed returned in metres per second, lets say 0.5 px = 1 metre so
 	    		var distance = $(cloud).offset().left;
-	    		var time = distance / weatherData.wind.speed * 500;
-				
+	    		var time = Math.abs(distance / weatherData.wind.speed * 500);
+
 				if (options.animate) {
-		    		$(cloud).animate({left:-(window.innerWidth + $(cloud).width()) + 'px'}, time, 'linear', function() {
+		    		$(cloud).animate({left: to + 'px'}, time, 'linear', function() {
 		    		    $(this).remove();
 		    		});
 	    		}
@@ -195,7 +204,7 @@ var bwMeet = (function(){
 	    	
 	    	if (options.animate) {
 		    	var distance = $('.cloud:first-of-type').offset().left,
-	    			time = (distance / weatherData.wind.speed * 500) / 2,
+	    			time = Math.abs((distance / weatherData.wind.speed * 500) / 2),
 		    		timeout = time + getRandomInt(1000, 10000);
 
 		    	setTimeout(function() {
@@ -222,7 +231,7 @@ var bwMeet = (function(){
 			        if (location.search.indexOf('rain') > -1)
 			        	condition = 300;
 
-			        if (location.search.indexOf('cloudy') > -1)
+			        if (location.search.indexOf('cloud') > -1)
 			        	condition = 803;
 
 			        if (location.search.indexOf('lightning') > -1)
@@ -285,14 +294,9 @@ var bwMeet = (function(){
 			    }
 			});
 		};
-		
-		var set = function() {
-			console.log(arguments);
-		};
-		
+				
 		return {
-			get: get,
-			set: set
+			get: get
 		};
 	})();
 
