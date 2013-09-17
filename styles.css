@@ -273,8 +273,8 @@ main{
 
 .night .cloud ellipse,
 .heavy-cloud .cloud ellipse {
-	fill: darkgray;
-	stroke: darkgray;
+	fill: #7d828c;
+	stroke: #7d828c;
 }
 
 @keyframes drifting {

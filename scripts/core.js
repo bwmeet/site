@@ -82,7 +82,7 @@ var bwMeet = (function(){
 		var back = document.getElementById('back');
 		sun.classList.remove('hide');
 
-		back.appendChild(sun);
+		back.insertBefore(sun, document.getElementsByClassName('clouds')[0]);
 	}
 
 	function checkToday(time){
@@ -91,6 +91,7 @@ var bwMeet = (function(){
 			check;
 
 		var findGrade = function(sunrise, sunset) {
+			
 			if (hour >= sunset + 2 || hour <= sunrise - 2) {
 				//console.log("Nighttime");
 				check = timeGrades.night;
@@ -117,6 +118,18 @@ var bwMeet = (function(){
 		    dataType: 'jsonp',
 		    url: 'http://api.openweathermap.org/data/2.5/weather?q=Bournemouth,uk&callback=?',
 		    success: function(data) {
+		    	var condition = data.weather[0].id;
+		    	if ((condition >= 300 && condition <= 321) || (condition >= 500 && condition <= 522)) {
+		        	timeGrades = {
+						day : {
+							r : 170,
+							g : 179,
+							b : 191,
+							cssClass : "day"
+						}
+					};
+				}
+
 		    	var sunrise = new Date(data.sys.sunrise * 1000).getHours();
 		    	var sunset = new Date(data.sys.sunset * 1000).getHours();
 
@@ -245,6 +258,15 @@ var bwMeet = (function(){
 			        	});
 			        	
 			        } else if ((condition >= 300 && condition <= 321) || (condition >= 500 && condition <= 522)) {
+			        	timeGrades = {
+							day : {
+								r : 170,
+								g : 179,
+								b : 191,
+								cssClass : "day"
+							}
+						};
+
 			        	//drizzle/rain
 			        	cloudFactory({
 			        		animate: false,
