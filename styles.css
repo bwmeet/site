@@ -1,189 +1,136 @@
 @charset "UTF-8";
 /* CSS Document */
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
 html{
-	background-color: #fff;
-	background-position: center 0;
-	background-size: 100%;
+	height:100%;
+	width:100%;
+	background-color:#fff;
+	background-position:center 0;
+	background-size:100%;
 }
 
 body{
 	font-family: 'Roboto', sans-serif;
-	font-size:16px;
-	margin:0;
+	font-size:12pt;
+	margin:0px;
+	background-attachment: scroll;
 	background-repeat: repeat-y;
+	width:100%;
+	height:auto;
 }
 
-.hidden{
-	opacity: 0;
+.hide{
+	display: none;	
 }
 
 main{
+	width: 100%;
+	height: auto;
 	background-color: rgb(245, 245, 245);
 	padding-top: 40px;
-	display: block;
 }
 
-#poster{
-	max-width: 1000px;
-	width: 100%;
+main audio{
+	display: none;
+}
+
+main #poster{
+	width: 1000px;
 	height: 1410px;
-	background-color: #fff;
+	background-color: white;
 	position: relative;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;	
 	box-shadow: 0 3px 5px black;
 	padding: 20px;
 }
 
-#frame{
+main #poster #frame{
 	width: 100%;
 	height: 100%;
 }
-
-.day{
-	background-color: rgb(120, 182, 227);
-}
-
-.dusk{
-	background-color: rgb(95, 81, 179);
-}
-
-.night{
-	background-color: rgb(9, 49, 117);
-}
-
-.dawn{
-	background-color: rgb(235, 197, 94);
-}
-
-#back{
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	position: relative;
-	top:0;
-	left: 0;
-}
-
-#clouds,
-#stars,
-#grades{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-}
-
-#stars{
-	background-image: url('assets/images/stars.png');
-}
-
-#grades span{
-	float: left;
-	width: 100%;
-	height: 17%;
-}
-
-#grades span:nth-child(1){
-	background-color: rgba(0,0,0,0) !important;	
-}
-
-#grades span:nth-child(2){
-	background-color: rgba(0,0,0,.04) !important;	
-}
-
-#grades span:nth-child(3){
-	background-color: rgba(0,0,0,.08) !important;	
-}
-
-#grades span:nth-child(4){
-	background-color: rgba(0,0,0,.12) !important;	
-}
-
-#grades span:nth-child(5){
-	background-color: rgba(0,0,0,.16) !important;	
-}
-
-#grades span:nth-child(6){
-	background-color: rgba(0,0,0,.2) !important;	
-}
-
-#content{
-	max-width: 1000px;
-	width: 100%;
+main #poster #frame #content{
+	width: 1000px;
 	height: 1410px;
 	position: absolute;
 	top: 20px;
 	left: 20px;
+	border: 1px solid rgba(0,0,0,.2);
+	z-index: 1000;
 }
 
-#content header{
+main #poster #frame #content header{
 	padding-top: 20px;
 }
 
-#logo{
+main #poster #frame #content header #logo{
+	float: right;
+	margin-right: 20px;
+}
+
+main #poster #frame #tint{
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 500;
+}
+
+main #poster #frame #tint #haveYouThought{
 	position: absolute;
-	right: 60px;
-	z-index: 1;
+	left: 50%;
+	top: 30%;
+	text-align: center;
+	color: white;
+	background-color: rgba(255,255,255,.1);
+	padding: 25px 15px 10px;
+	border-radius: 5px;
+	margin-left: -134px;
+	font-weight: 200;
 }
 
-#balloon{
-	background-image: url('assets/images/balloon.png');
-	background-repeat: no-repeat;
-	margin-left: 50px;
-	width: 330px;
 
-	-moz-animation: breezeAnimation 20s infinite; /* Firefox */
-	-webkit-animation: breezeAnimation 20s infinite; /* Safari and Chrome */
-	-o-animation: breezeAnimation 20s infinite; /* Opera */
-	animation: breezeAnimation 20s infinite;
+main #poster #frame #WebGL{
+    position: absolute;
+    top: 20px;
 }
 
-#balloon img{
-	opacity: 0;
-}
-
-#content footer{
+main #poster #frame #content footer{
 	width: 100%;
 	height: auto;
 	position: absolute;
 	bottom: 0;
 }
 
-#info{
+main #poster #frame #content footer #info{
 	float: left;
 	width: 500px;
 	position: absolute;
-	bottom: 60px;
+	bottom: 20px;
 	left: 20px;
 }
 
-#info h1,
-#hashtag a{
+main #poster #frame #content footer #info h1, main #poster #frame #content footer #hashtag a{
 	margin: 0;
 	padding: 0;
-	color: white;
 	font-size: 45px;
 	font-weight: 100;
+	color: #808080;
 }
 
-#hashtag{
+main #poster #frame #content footer #hashtag{
+    float: right;
 	position: absolute;
-	right: 60px;
-	bottom: 60px;
+	right: 20px;
+	bottom: 20px;
 }
 
-#hashtag a{
-	color: rgba(255, 255, 255, .5);
+main #poster #frame #content footer #hashtag a{
+	color: rgba(0, 0, 0, .5);
+	color: #808080;
 }
 
-#information{
-	max-width: 1000px;
-	width: 100%;
+main #information{
+	width: 1000px;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
@@ -191,174 +138,81 @@ main{
 	padding-bottom: 30px;
 }
 
-#information nav{
+main #information nav{
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #ababab;
-	margin: 0 auto 20px;
+	margin-bottom: 20px;
 }
 
-#information nav ul,
-#information nav ul li{
+main #information nav ul, main #information nav ul li{
 	margin:0;
 	padding: 0;
 	list-style-type: none;
 	text-align: center;
 }
 
-#information nav ul{
+main #information nav ul{
 	width: 100%;
 }
 
-#information nav ul li{
+main #information nav ul li{
 	width:100px;
 	display: inline;
 	padding: 0 20px;
+	
+}
+
+main #information nav ul li{
 	color: #9c9c9c;
 	cursor: pointer;
 }
 
-#information nav ul li.active{
+main #information nav ul li.active{
 	color: #636363;
 }
 
-#information article{
+main #information article{
 	display: none;
 	text-align: center;
 }
 
-#information article.active{
+main #information article.active{
 	display: block;
 	width: 100%;
 	height: auto;
 }
 
-#information article p{
+main #information article p{
 	font-size: 14px;
 	width: 60%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#information article p a{
+main #information article p a{
 	text-decoration: none;
 	color: #6092b6;
 }
 
-#ticket{
+main #ticket{
 	text-align: center;
 	padding-bottom: 50px;
 }
 
-/* weather */
-.clouds {
-	position: relative;
-	top: -15%;
+.fadeOut{
+	opacity: 0;
+	animation: fadeOutAnimation 1s;
+	-moz-animation: fadeOutAnimation 1s; /* Firefox */
+	-webkit-animation: fadeOutAnimation 1s; /* Safari and Chrome */
+	-o-animation: fadeOutAnimation 1s; /* Opera */
 }
 
-.cloud {
-	position: absolute;
-}
-
-.cloud:nth-of-type(2) {
-	left: 0;
-}
-
-.cloud:nth-of-type(3) {
-	left: 20%;
-}
-
-.cloud:nth-of-type(4) {
-	left: 50%;	
-}
-
-.night .cloud ellipse,
-.heavy-cloud .cloud ellipse {
-	fill: #7d828c;
-	stroke: #7d828c;
-}
-
-@keyframes drifting {
-	0% {
-		left: 0;
-	}
-	100% {
-		left: 200%;
-	}
-}
-
-.hide {
-	display: none;
-}
-
-.lightning {
-	background: white;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-}
-
-.drop {
-	background: -webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
-	background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
-	background: linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
-	width: 1px;
-	height: 30px;
-	position: absolute;
-	bottom: 200px;
-	-webkit-animation: fall 0.63s linear infinite;
-	-moz-animation: fall 0.63s linear infinite;
-	animation: fall 0.63s linear infinite;
-}
-
-.sun {
-	-moz-animation: spin 500s linear infinite; /* Firefox */
-	-webkit-animation: spin 500s linear infinite; /* Safari and Chrome */
-	-o-animation: spin 500s linear infinite; /* Opera */
-	animation: spin 500s linear infinite;
-	transform-origin: 30% 50%;
-	position: absolute;
-	top: -50%;
-}
-
-@media only screen and (max-width: 42.8125em) {
-	#information nav ul li {
-		padding: 0.5em 0;
-		display: block;
-		margin: 0 auto;
-	}
-	
-	#info {
-		float: none;
-		width: auto;
-		position: relative;
-		margin-left: 0.5em;
-	}
-	
-	#hashtag {
-		position: relative;
-		margin-left: 88px;
-	}
-	
-	#info h1,
-	#hashtag a {
-		font-size: 24px;
-	}
-	
-	#poster {
-		overflow: hidden;
-	}
-	
-	#balloon {
-		width: 200px;
-		margin: 120px 0 0 0;
-		background-size: contain;
-	}
-	
-	img {
-		max-width: 100%;
-	}
-	
-	#logo {
-		left: 15%;
-	}
+.fadeIn{
+	animation: fadeInAnimation 1s;
+	-moz-animation: fadeInAnimation 1s; /* Firefox */
+	-webkit-animation: fadeInAnimation 1s; /* Safari and Chrome */
+	-o-animation: fadeInAnimation 1s; /* Opera */
 }

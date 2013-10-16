@@ -1,87 +1,71 @@
-
-@-moz-keyframes breezeAnimation{
+@keyframes fadeOutAnimation{
 	0% {
-		-moz-transform: translate(0px, 0px);
-	}
-	33% {
-		-moz-transform: translate(20px, 20px);
-	}
-	66%{
-		-moz-transform: translate(40px, 10px);
+		opacity: 1;
 	}
 	100% {
-		-moz-transform: translate(0px, 0px);
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes fadeOutAnimation{
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
 	}
 }
 	
-@-webkit-keyframes breezeAnimation{
+@-webkit-keyframes fadeOutAnimation{
 	0% {
-		-webkit-transform: translate(0px, 0px);
-	}
-	33% {
-		-webkit-transform: translate(20px, 20px);
-	}
-	66%{
-		-webkit-transform: translate(40px, 10px);
+		opacity: 1;
 	}
 	100% {
-		-webkit-transform: translate(0px, 0px);
+		opacity: 0;
 	}
 }
 	
-@-o-keyframes breezeAnimation{
+@-o-keyframes fadeOutAnimation{
 	0% {
-		-o-transform: translate(0px, 0px);
-	}
-	33% {
-		-o-transform: translate(20px, 20px);
-	}
-	66%{
-		-o-transform: translate(40px, 10px);
+		opacity: 1;
 	}
 	100% {
-		-o-transform: translate(0px, 0px);
+		opacity: 0;
 	}
 }
 
-@keyframes breezeAnimation{
+@keyframes fadeInAnimation{
 	0% {
-		transform: translate(0px, 0px);
-	}
-	33% {
-		transform: translate(20px, 20px);	
-	}
-	66%{
-		transform: translate(40px, 10px);
+		opacity: 0;
 	}
 	100% {
-		transform: translate(0px, 0px);
+		opacity: 1;
 	}
 }
 
-/* animate the drops*/
-@-webkit-keyframes fall {
-	to {
-		margin-top:900px;
+@-moz-keyframes fadeInAnimation{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
-@-moz-keyframes fall {
-	to {
-		margin-top:900px;
+	
+@-webkit-keyframes fadeInAnimation{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
-
-@keyframes fall {
-	to {
-		margin-top:900px;
+	
+@-o-keyframes fadeInAnimation{
+	0% {
+		opacity: 0;
 	}
-}
-
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(359deg);
+	100% {
+		opacity: 1;
 	}
 }
