@@ -110,10 +110,10 @@ main #poster #frame #content #turnable{
 	text-align: center;
 	transition: transform 1.5s ease-in-out;
 
-	-webkit-transition: transform 1.5s ease-in-out;
-	-moz-transition: transform 1.5s ease-in-out;
-	-o-transition: transform 1.5s ease-in-out;
-	-ms-transition: transform 1.5s ease-in-out;
+	-webkit-transition: -webkit-transform 1.5s ease-in-out;
+	-moz-transition: -moz-transform 1.5s ease-in-out;
+	-o-transition: -o-transform 1.5s ease-in-out;
+	-ms-transition: -ms-transform 1.5s ease-in-out;
 }
 
 main #poster #frame #content footer{
