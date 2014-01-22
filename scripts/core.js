@@ -21,7 +21,7 @@ var __bwMeet14 = (function(){
 
 		var tp = 0;
 
-		while(tp < windParticles.length){
+		while (tp < windParticles.length) {
 
 			var thisParticle = windParticles[tp],
 				color = thisParticle.color;
@@ -33,19 +33,19 @@ var __bwMeet14 = (function(){
 			thisParticle.x = maths.trig("X", thisParticle.x, thisParticle.speed, wind.direction - 90);
 			thisParticle.y = maths.trig("Y", thisParticle.y, thisParticle.speed, wind.direction - 90);
 
-			if(thisParticle.x > canvas.width){
+			if (thisParticle.x > canvas.width) {
 				thisParticle.x = -30;
 			}
 
-			if(thisParticle.x < -30){
-				thisParticle.x = canvas.width
+			if (thisParticle.x < -30) {
+				thisParticle.x = canvas.width;
 			}
 
-			if(thisParticle.y > canvas.height){
+			if (thisParticle.y > canvas.height) {
 				thisParticle.y = -30;
 			}
 
-			if(thisParticle.y < -30){
+			if (thisParticle.y < -30) {
 				thisParticle.y = canvas.height;
 			}
 
@@ -62,7 +62,7 @@ var __bwMeet14 = (function(){
 		var maxParticles = 500,
 			az = 0;
 
-		while(az < maxParticles){
+		while (az < maxParticles){
 
 			var size = Math.round(Math.random() * 3),
 				speed = Math.round(Math.random() * wind.speed) / size,
@@ -71,17 +71,17 @@ var __bwMeet14 = (function(){
 				alpha = Math.random(),
 				backwards;
 
-			if(az % 2 == 0){
+			if (az % 2 === 0){
 				backwards = false;
 			} else {
 				backwards = true;
 			}
 
-			if(size === 0){
+			if (size === 0){
 				size = 1;
 			}
 
-			if(speed === 0){
+			if (speed === 0){
 				speed = 1;
 			}
 
@@ -98,7 +98,7 @@ var __bwMeet14 = (function(){
 				},
 				currentVariance : 0,
 				backwards : backwards
-			})
+			});
 
 			az += 1;
 
@@ -109,7 +109,7 @@ var __bwMeet14 = (function(){
 
 	function getWeather(){
     
-		var url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%3D13383&format=json&diagnostics=true&callback=";
+		var url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%3D13383&format=json&diagnostics=false&callback=";
 
 		jQuery.ajax({
 			type : "GET",
@@ -122,8 +122,6 @@ var __bwMeet14 = (function(){
 				wind.speed = result.wind.speed;
 				wind.direction = result.wind.direction;
 
-				console.log(wind);
-
 				turnable.style.webkitTransform = "rotate(" + wind.direction + "deg)";
 				turnable.style.MozTransform = "rotate(" + wind.direction + "deg)";
 				turnable.style.transform = "rotate(" + wind.direction + "deg)";
@@ -134,20 +132,12 @@ var __bwMeet14 = (function(){
 			error : function(e){
 				console.error(e);
 			}
-		})
-
-	}
-
-	function addEvents(){
-
+		});
 	}
 
 	function init(){
-
 		console.log("BWMEET 14 BABY, YEAH!!!");
-		addEvents();
 		getWeather();
-
 	}
 
 	return {
