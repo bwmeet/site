@@ -5,31 +5,26 @@
 <meta name="description" content="B &amp; W Meet is a Bournemouth-based pub meet for digital creatives. Fit the bill&#63; Join Us.">
 <title>B &amp; W Meet | A meet for like-minded digital creatives.</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
 <link rel="shortcut icon" href="favicon.ico">
 <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
-<!--<meta name="viewport" content="initial-scale=1.0" />-->
+<meta name="viewport" content="initial-scale=1.0" />
 </head>
 <body>
-
-	<main>
+	<main role="main">
 			
 			<div id="poster">
 				
 				<div id="frame">
 
+					<div id="tint">
+						<div id="haveYouThought">
+							<img src="assets/images/bcbomo-logo.png" alt="BarCamp Bournemouth logo" title="We love BarCamp">
+						</div>
+					</div>
+
 					<section id="content">
 						
-						<div id="directionHolder">
-
-							<img src="assets/images/wayTheWindBlows.png" id="turnable" alt="A graphic to indicate the direction of the wind">
-							<img src="assets/images/mask.png" alt="A graphic to indicate the direction of the wind">
-
-						</div>
-
-						<canvas width="1000" height="1410">
-							<p>Hey Fellow internet surfer, Why U No Canvas?</p>
-						</canvas>
-
 						<header>
 							
 							<div id="logo">
@@ -41,10 +36,9 @@
 						<footer>
 		
 							<section id="info">
-								<h1>18:15</h1>
-								<h1>11th February 2014</h1>
-								<h1>The Slug and Lettuce</h1>
-								<h1>Bournemouth</h1>
+								<h2>19:00</h2>
+								<h2>10th May 2014</h2>
+								<h2>Bournemouth University</h2>
 							</section>
 					
 							<section id="hashtag">
@@ -66,7 +60,6 @@
 						<li class="active"><a>What's it all about?</a></li>
 						<li><a>Who are you guys?</a></li>
 						<li><a>What's with the poster?</a></li>
-						<li><a>Why is it free?</a></li>
 					</ul>
 				</nav>
 
@@ -79,46 +72,35 @@
 				</article>
 
 				<article>
-					<p>B &amp; W Meet is run by <a href="http://twitter.com/seanmtracey" target="_blank">Sean Tracey</a> and <a href="http://twitter.com/timofetimo" target="_blank">Tim Stone</a>. We love building for the web and we love meeting people - That's why B &amp; W Meet is a thing.</p>
+					<p>B &amp; W Meet is run by <a href="http://twitter.com/seanmtracey" target="_blank">Sean Tracey</a> and <a href="http://twitter.com/timofetimo" target="_blank">Tim Stone</a>. We love building for the web and we love meeting people&mdash;that's why B &amp; W Meet is a thing.</p>
 				</article>
 
 				<article>
-					<p>The B &amp; W Meet website doesn't have to say a whole lot. It's because of this that we've had the same site for over a year (A little embarressing for Web Developers :P).</p>
-					<p>So, rather than just updating the same old site for each new event, we thought we'd make the<br>B &amp; W Meet site more like a paper poster - but with all the goodness of the web.</p>
-					<p>Like a print run, Each B &amp; W Meet event will have a different site that will (try to) show off either some of the latest cool stuff on the internet, or something that we love about Bournemouth/Dorset.</p>
+					<p>The B &amp; W Meet website doesn't have to say a whole lot. It's because of this that we've had the same site for over a year (a little embarrassing for web developers :P).</p>
+					<p>So rather than just updating the same old site for each new event, we thought we'd make the<br>B &amp; W Meet site more like a paper poster but with all the goodness of the web.</p>
+					<p>Like a print run, each B &amp; W Meet event will have a different site that will (try to) show off either some of the latest cool stuff on the internet, or something that we love about Bournemouth/Dorset.</p>
 					<p>Now, the problem with building a website around the new and shiny of the web is that not everyone can see it, We promise we'll always do our best to make sure the site fails gracefully and gives you the info you need.</p>
 				</article>
-
-				<article>
-					<p>It's free thanks to our wonder sponsor:</p>
-					<p>
-						<a href="http://www.campaignmonitor.com/">Campaign Monitor</a>
-						makes it easy to attract new subscribers, send them beautiful email newsletters and see stunning reports on the results. Built from the ground up for creative professionals, you can also rebrand the app, manage all your clients from a single account and let them send campaigns at prices you set.
-					</p>
-					<p><em>They're also tremendously nice people.</em></p>
-				</article>
-
 			</section>
-
 			<div id="ticket">
-				<a href="http://bwmeet14.eventbrite.com"><img src="assets/images/ticket.png" alt="Grab a ticket"></a>
+				<a href="http://bwmeet13.eventbrite.com"><img src="assets/images/ticket.png" alt="Grab a ticket"></a>
 			</div>
-
 	</main>
+	<script src="scripts/libraries/jquery.js"></script>
 
-<script src="scripts/libraries/jquery.js"></script>
-<script src="scripts/menu.js"></script>
 
-<script>
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-11418004-2']);
-	_gaq.push(['_trackPageview']);
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-</script>
+	<script src="scripts/menu.js"></script>
+
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-11418004-2']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
 </body>
 </html>
