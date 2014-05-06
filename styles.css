@@ -39,6 +39,7 @@ img {
 
 #poster {
 	width: 80%;
+	max-width: 1000px;
 	height: 1110px;
 	background-color: white;
 	position: relative;
@@ -131,6 +132,7 @@ img {
 
 #information {
 	width: 80%;
+	max-width: 1000px;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
@@ -140,6 +142,7 @@ img {
 
 #information nav {
 	width: 95%;
+	max-width: 900px;
 	margin-left: auto;
 	margin-right: auto;
 	padding-bottom: 20px;
