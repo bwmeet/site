@@ -222,4 +222,34 @@ img {
 	#hashtag a {
 		font-size: 24px;
 	}
+
+	#info {
+		left: 0;
+		padding: 0 20px;
+	}
+
+	#poster {
+		height: 730px;
+	}
+
+	#content {
+		height: 720px;
+	}
+
+	#information article p {
+		font-size: 16px;
+		width: 100%;
+	}
+
+	#information nav ul li {
+		margin: 0 auto;
+		width: auto;
+		display: block;
+		padding: 12px 0;
+		font-size: 16px;
+	}
+
+	#ticket {
+		margin: 0 1em;
+	}
 }
