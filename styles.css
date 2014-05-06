@@ -88,11 +88,6 @@ audio {
 	font-weight: 200;
 }
 
-#WebGL {
-    position: absolute;
-    top: 20px;
-}
-
 #content footer {
 	width: 100%;
 	height: auto;
