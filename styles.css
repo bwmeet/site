@@ -33,8 +33,12 @@ audio {
 	display: none;
 }
 
+img {
+	max-width: 100%;
+}
+
 #poster {
-	width: 1000px;
+	width: 80%;
 	height: 1110px;
 	background-color: white;
 	position: relative;
@@ -50,6 +54,7 @@ audio {
 }
 #content {
 	width: 1000px;
+	width: calc(100% - 40px);
 	height: 1110px;
 	position: absolute;
 	top: 20px;
@@ -125,7 +130,7 @@ audio {
 }
 
 #information {
-	width: 1000px;
+	width: 80%;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
@@ -134,7 +139,7 @@ audio {
 }
 
 #information nav {
-	width: 900px;
+	width: 95%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-bottom: 20px;
@@ -198,17 +203,23 @@ audio {
 	padding-bottom: 50px;
 }
 
-.fadeOut {
-	opacity: 0;
-	-moz-animation: fadeOutAnimation 1s; /* Firefox */
-	-webkit-animation: fadeOutAnimation 1s; /* Safari and Chrome */
-	-o-animation: fadeOutAnimation 1s; /* Opera */
-	animation: fadeOutAnimation 1s;
+@media (max-width: 960px) {
+	#hashtag, 
+	#info {
+		position: relative;
+		width: auto;
+	}
+
+	#haveYouThought {
+		position: relative;
+		left: 0;
+		margin-left: 0;
+	}
 }
 
-.fadeIn {
-	-moz-animation: fadeInAnimation 1s; /* Firefox */
-	-webkit-animation: fadeInAnimation 1s; /* Safari and Chrome */
-	-o-animation: fadeInAnimation 1s; /* Opera */
-	animation: fadeInAnimation 1s;
+@media (max-width: 640px) {
+	#info h2,
+	#hashtag a {
+		font-size: 24px;
+	}
 }
