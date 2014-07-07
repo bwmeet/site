@@ -12,6 +12,7 @@ ExpiresDefault "access plus 10 years"
 Header set Cache-Control "max-age=290304000, public"
 Header unset ETag
 FileETag None
+AddDefaultCharset utf-8
 
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
