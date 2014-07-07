@@ -67,7 +67,7 @@ header:before {
 header {
     color: #fff;
     text-align: center;
-    background: url(/images/background.jpg) 50% 50% no-repeat;
+    background: #b45c43 url(/images/background.jpg) 50% 50% no-repeat;
     background-size: cover;
 }
 
