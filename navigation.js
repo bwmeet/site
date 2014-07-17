@@ -1,31 +1,20 @@
 'use strict';
 
 if (typeof history.pushState === 'function') {
-    var asyncLoadPage = function (target, bypass) {
-        var httpRequest = new XMLHttpRequest();
+    var showPage = function (target, bypass) {
+        if (!target)
+            target = 'index';
 
-        httpRequest.onreadystatechange = function (data) {
-            // process the server response
+        var hide = document.querySelectorAll('body > article:not(.' + target + ')');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].style.display = 'none';
+        }
 
-            if (httpRequest.readyState !== 4 || httpRequest.status !== 200) {
-                return;
-            }
+        if (!bypass) {
+            history.pushState(target, document.title, target);
+        }
 
-            if (!bypass) {
-                history.pushState(target, document.title, target);
-            }
-
-            var html = data.target.responseText;
-
-            var x = document.createElement('div');
-            x.innerHTML = html;
-            var article = x.querySelector('article');
-            document.querySelector('article').innerHTML = article.innerHTML;
-        };
-
-        httpRequest.open('GET', target);
-        httpRequest.send(null);
-        return false;
+        document.querySelector('body > article.' + target).style.display = 'block';
     };
 
     var links = document.querySelectorAll('nav a:not(.exempt)');
@@ -39,9 +28,10 @@ if (typeof history.pushState === 'function') {
                 active[i].classList.remove('active');
             }
 
-            event.target.classList.toggle('active');
+            event.currentTarget.classList.toggle('active');
 
-            asyncLoadPage(event.target.href);
+            var target = event.currentTarget.href.split('/')[3].replace('.html','');
+            showPage(target);
         });
     }
 
@@ -60,7 +50,7 @@ if (typeof history.pushState === 'function') {
             if (links[i].href.indexOf(state) > -1)
                 links[i].classList.add('active');
 
-        asyncLoadPage(event.state, true);
+        showPage(event.state, true);
     });
 
     var scrollTo = function (event) {
