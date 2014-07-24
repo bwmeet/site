@@ -194,6 +194,12 @@ a[class^="cta-"]:hover {
     margin: 30px 0;
 }
 
+@media only screen and (min-width: 35em) and (max-width: 42em) {
+    .bio h2 {
+        margin-top: 0;
+    }
+}
+
 @media only screen and (min-width: 35em) {
     .bio + .bio.media {
         text-align: right;
