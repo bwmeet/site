@@ -146,11 +146,9 @@ footer a {
     margin-right: auto;
 }
 
-@media screen and (min-width: 60rem) {
+@media screen and (min-width: 60em) {
     .constrained {
         max-width: 60rem;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
@@ -264,7 +262,7 @@ a[class^="cta-"]:hover {
     float: right;
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 53.75em) {
     .join-us {
         text-align: left;
     }
@@ -289,7 +287,7 @@ header a[class^="cta-"] {
     margin: 1.67em 1em 3.33em;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 32.5em) {
     header a[class^="cta-"] {
         margin: 0.5em 1em;
     }
