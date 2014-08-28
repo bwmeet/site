@@ -16,3 +16,5 @@ FileETag None
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
 </IfModule>
+
+Header set X-Frame-Options DENY
