@@ -69,5 +69,28 @@
 
             showPage(event.state, true);
         });
+
+        var scrollTo = function (event) {
+            event.preventDefault();
+            var clicker = event.target.tagName === 'I' ?
+                event.target.parentNode : event.target;
+
+            var target = clicker.href.split('#')[1],
+                el = document.getElementById(target);
+
+            var loop = function() {
+                if (scrollY > el.offsetTop) {
+                    scrollBy(0, -50);
+                    requestAnimationFrame(loop);
+                }
+            };
+            
+            loop();
+        };
+
+        var pageLinks = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < pageLinks.length; i++) {
+            pageLinks[i].addEventListener('click', scrollTo);
+        }
     }
 })();
