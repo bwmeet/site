@@ -328,3 +328,7 @@ header a[class^="cta-"] {
 .cf:after {
     clear: both;
 }
+
+.is-hidden {
+    display: none;
+}
