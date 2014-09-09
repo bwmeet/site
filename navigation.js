@@ -16,18 +16,24 @@
                 history.pushState(target, document.title, target);
             }
 
-            document.querySelector('body > article.' + target).classList.remove('is-hidden');
+            var page = document.querySelector('body > article.' + target);
+            page.classList.remove('is-hidden');
 
             var nav = document.getElementById('site-nav');
-            var navPosition = nav.offsetTop;
+            var navPosition = page.offsetTop - 75;
+
+            var oldY;
 
             var loop = function() {
-                if (scrollY > navPosition) {
-                    scrollBy(0, Math.min(scrollY - navPosition, -40));
-                    requestAnimationFrame(loop);
-                } else if (scrollY < navPosition) {
-                    scrollBy(0, Math.min(navPosition - scrollY, 40));
-                    requestAnimationFrame(loop);
+                if (oldY !== scrollY) {
+                    oldY = scrollY;
+                    if (scrollY > navPosition) {
+                        scrollBy(0, Math.min(scrollY - navPosition, -40));
+                        requestAnimationFrame(loop);
+                    } else if (scrollY < navPosition) {
+                        scrollBy(0, Math.min(navPosition - scrollY, 40));
+                        requestAnimationFrame(loop);
+                    }
                 }
             };
 
@@ -84,7 +90,7 @@
                     requestAnimationFrame(loop);
                 }
             };
-            
+
             loop();
         };
 
