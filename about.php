@@ -1,6 +1,6 @@
 <?php require_once 'header.php'; ?>
         <header id="top">
-            <img src="images/logo.png" alt="The B &amp; W Meet logo" class="logo circle" width="180" height="180">
+            <img src="images/logo-circle.svg" alt="The B &amp; W Meet logo" class="logo circle" width="180" height="180">
             <p class="strapline">
                 <em>A regular, local meetup</em>
                 for creatives, developers &amp; tech enthusiasts
@@ -11,7 +11,6 @@
                 <p class="right"><i class="icon-pound"></i>Free</p>
             </div>
             <a href="<?php echo $eventUrl; ?>" class="cta-primary">Get tickets</a>
-            <!-- <a href="#" class="cta-secondary">Find out more</a> -->
         </header>
         <nav id="site-nav">
             <ul class="constrained">

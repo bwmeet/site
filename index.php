@@ -1,7 +1,7 @@
 <?php require_once 'event.php'; ?>
 <?php require_once 'header.php'; ?>
         <header id="top">
-            <img src="images/logo.png" alt="The B &amp; W Meet logo" class="logo circle" width="180" height="180">
+            <img src="images/logo.svg" alt="The B &amp; W Meet logo" class="logo circle" width="180" height="180">
             <p class="strapline">
                 <em>A regular, local meetup</em>
                 for creatives, developers &amp; tech enthusiasts
