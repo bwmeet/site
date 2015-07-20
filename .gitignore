@@ -1,6 +1,8 @@
 
 .DS_Store
 
+.DS_Store/
+
 bwmeet.esproj/Project (Tim-Stones-iMac's conflicted copy 2011-12-03).espressostorage
 
 bwmeet.esproj/Project.espressostorage
@@ -18,4 +20,3 @@ bwmeet.esproj/user.Sean.espressostorage
 sftp-config.json
 
 Resources/
-
