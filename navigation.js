@@ -4,7 +4,7 @@
     if (typeof history.pushState === 'function') {
         var showPage = function (target, bypass) {
             if (!target) {
-                target = 'index';
+                target = 'about';
             }
 
             var hide = document.querySelectorAll('body > article:not(.' + target + ')');
