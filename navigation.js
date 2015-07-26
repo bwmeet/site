@@ -57,8 +57,18 @@
                 showPage(target);
             });
         }
-
-        window.addEventListener('popstate', function (event) {
+		
+		// Safari has an issue that fires popstate on page load
+		// to workaround this we find the history entries at load
+		// and in the popstate event handler we check that something
+		// has changed
+		var initialOrder = window.history.length;   
+        
+		window.addEventListener('popstate', function (event) {
+			if (window.history.length === initialOrder) {
+				return;
+			}
+			
             event.preventDefault();
             var active = document.getElementsByClassName('active'),
                 state = event.state || 'index.html';
@@ -69,9 +79,11 @@
 
             var links = document.querySelectorAll('nav a:not(.exempt)');
 
-            for (var i = 0; i < links.length; i++)
-                if (links[i].href.indexOf(state) > -1)
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].href.indexOf(state) > -1) {
                     links[i].classList.add('active');
+				}
+			}
 
             showPage(event.state, true);
         });
