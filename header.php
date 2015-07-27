@@ -25,7 +25,7 @@
 			<?php if (strlen($eventUrl) > 0) { ?>
             <a href="<?php echo $eventUrl; ?>" class="cta-primary">Get tickets</a>
             <?php } else { ?>
-            <a class="cta-primary">Tickets will be released soon</a>
+            <a class="cta-primary">Tickets coming soon</a>
             <?php } ?>
             <!-- <a href="#" class="cta-secondary">Find out more</a> -->
 		</header>
