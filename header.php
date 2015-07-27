@@ -22,7 +22,11 @@
 				<p class="middle"><a href="<?php echo $eventLocationMapLink; ?>"><i class="icon-location"></i><?php echo $eventLocation; ?></a></p>
 				<p class="right"><i class="icon-pound"></i>Free</p>
 			</div>
-			<a href="<?php echo $eventUrl; ?>" class="cta-primary">Get tickets</a>
+			<?php if (strlen($eventUrl) > 0) { ?>
+            <a href="<?php echo $eventUrl; ?>" class="cta-primary">Get tickets</a>
+            <?php } else { ?>
+            <a class="cta-primary">Tickets will be released soon</a>
+            <?php } ?>
             <!-- <a href="#" class="cta-secondary">Find out more</a> -->
 		</header>
 		<nav id="site-nav">
