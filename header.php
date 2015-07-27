@@ -1,5 +1,4 @@
 <?php require_once 'event.php'; ?>
-<?php echo $_SERVER['REQUEST_URI'] ?>
 <!doctype html>
 <html>
     <head>

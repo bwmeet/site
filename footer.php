@@ -1,3 +1,4 @@
+        <?php if (strlen($eventUrl) > 0) { ?>
         <div class="join-us cf">
             <div class="constrained">
                 <div>
@@ -7,6 +8,7 @@
                 <a href="<?php echo $eventUrl; ?>" class="cta-tertiary">Get tickets</a>
             </div>
         </div>
+        <?php } ?>
         <footer>
             <p class="constrained">Site design by <a href="http://killercreations.co.uk/">KillerCreations</a>. Made with ❤ in Dorset.
         </footer>
