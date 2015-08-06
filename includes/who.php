@@ -6,18 +6,17 @@
 	</div>
 	<div class="body">
 		<h2>Tim Stone</h2>
-		<p>Hey, I'm a lead front end developer at Redweb which means I get to make and break sites. I write tutorials for Web Designer magazine which usually focus on JavaScript things. I like reading and listening.</p>
+		<p>Hey, I’m a lead front end developer at Redweb which means I get to make and break sites. I write tutorials for Web Designer magazine which usually focus on JavaScript things. I like reading and listening.</p>
 		<p><a href="https://twitter.com/timofetimo" class="twitter-link">timofetimo</a></p>
 	</div>
 </div>
-<!--
 <div class="bio media">
 	<div class="image">
 		<img src="/images/francesca.jpg" alt="Francesca">
 	</div>
 	<div class="body">
 		<h2>Francesca Moores</h2>
-		<p></p>
+		<p>I’m a Project Manager at Redweb, so I know a little about a lot when it comes to web design &amp; build. Outside of digital, it’s lots of piano playing and a little bit of doodling.</p>
 		<p><a href="https://twitter.com/francescamoores" class="twitter-link">FrancescaMoores</a></p>
 	</div>
 </div>
@@ -27,11 +26,10 @@
 	</div>
 	<div class="body">
 		<h2>James Bliss</h2>
-		<p></p>
+		<p>Hi, I’m James a Lead Front End Developer at Redweb obsessed with perfect pixels and awesome code! I ❤ all things CSSy.</p>
 		<p><a href="https://twitter.com/thejamesbliss" class="twitter-link">thejamesbliss</a></p>
 	</div>
 </div>
--->
 <section class="why">
 	<h2>Why?</h2>
 	<p>
