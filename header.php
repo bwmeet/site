@@ -3,7 +3,7 @@
 <html>
     <head>
         <title>B &amp; W Meet</title>
-        <link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic,300' rel='stylesheet' type='text/css'>
+        <link href="//fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic,300" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/css/bwmeet-embedded.css" media="screen">
         <link rel="stylesheet" href="/css/normalize.min.css" media="screen">
         <link rel="stylesheet" href="/css/master.css" media="screen">
