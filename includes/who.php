@@ -6,7 +6,7 @@
 	</div>
 	<div class="body">
 		<h2>Tim Stone</h2>
-		<p>Hey, I’m a lead front end developer at Redweb which means I get to make and break sites. I write tutorials for Web Designer magazine which usually focus on JavaScript things. I like reading and listening.</p>
+		<p>Hey, I’m a front end developer at Lush. I also write tutorials for Web Designer magazine which usually focus on JavaScript things. I like reading and listening.</p>
 		<p><a href="https://twitter.com/timofetimo" class="twitter-link">timofetimo</a></p>
 	</div>
 </div>
