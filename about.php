@@ -5,7 +5,7 @@
 	<article class="constrained center who is-hidden">
 		<?php require_once 'includes/who.php' ?>
 	</article>
-	<article class="constrained center sponsors is-hidden">
-	   <?php require_once 'includes/sponsor.php' ?>
+	<article class="constrained center code-of-conduct is-hidden">
+	   <?php require_once 'includes/code-of-conduct.php' ?>
 	</article>
 <?php require_once 'footer.php'; ?>

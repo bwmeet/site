@@ -34,6 +34,7 @@
 				<li><a href="#top" class="exempt"><i class="icon-home"></i></a></li>
 				<li><a href="about" class="<?php echo $_SERVER['REQUEST_URI'] == '/' || $_SERVER['REQUEST_URI'] == '/about' ? 'active' : ''; ?>">About <span class="hide-mobile">B &amp; W Meet</span></a></li>
 				<li><a href="who" class="<?php echo $_SERVER['REQUEST_URI'] == '/who' ? 'active' : ''; ?>">Who<span class="hide-mobile"> are we</span>?</a></li>
-				<li><a href="sponsors" class="<?php echo $_SERVER['REQUEST_URI'] == '/sponsors' ? 'active' : ''; ?>">Sponsor</a></li>
+				<li><a href="code-of-conduct" class="<?php echo $_SERVER['REQUEST_URI'] == '/code-of-conduct' ? 'active' : ''; ?>"><span class="hide-mobile">Code of </span>Conduct</a></li>				
+                <!--<li><a href="sponsors" class="<?php echo $_SERVER['REQUEST_URI'] == '/sponsors' ? 'active' : ''; ?>">Sponsor</a></li>-->
 			</ul>
 		</nav>
