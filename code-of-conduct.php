@@ -2,10 +2,10 @@
 	<article class="constrained center about is-hidden">
 		<?php require_once 'includes/about.php' ?>
 	</article>
-	<article class="constrained center who">
+	<article class="constrained center who is-hidden">
 		<?php require_once 'includes/who.php' ?>
 	</article>
-	<article class="constrained center code-of-conduct is-hidden">
+	<article class="constrained center code-of-conduct">
 	   <?php require_once 'includes/code-of-conduct.php' ?>
 	</article>
 <?php require_once 'footer.php'; ?>

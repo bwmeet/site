@@ -56,7 +56,7 @@ nav a:hover {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 28.75em) {
+@media only screen and (max-width: 37.5em) {
     .hide-mobile {
         display: none;
     }
@@ -105,6 +105,10 @@ article a {
     margin-left: 37px;
 }
 
+.content-extended{
+    text-align: left;
+}
+
 .circle {
     border: 10px solid rgb(218, 94, 63);
     border-radius: 150px;
@@ -127,6 +131,21 @@ article a {
     font-style: normal;
     display: block;
     margin-bottom: 0.1em;
+}
+
+
+.cf:before,
+.cf:after {
+    content: "";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.is-hidden {
+    display: none;
 }
 
 @media only screen and (max-width: 30em) {
@@ -318,18 +337,4 @@ header a[class^="cta-"] {
     header a[class^="cta-"]:last-of-type {
         margin: 0.5em 1em 1em;
     }
-}
-
-.cf:before,
-.cf:after {
-    content: "";
-    display: table;
-}
-
-.cf:after {
-    clear: both;
-}
-
-.is-hidden {
-    display: none;
 }
