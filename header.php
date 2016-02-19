@@ -18,11 +18,22 @@
 				for creatives, developers &amp; tech enthusiasts
 			</p>
 			<div class="information">
-				<p class="left"><a href="event.ics" download><i class="icon-clock"></i><?php echo $eventDay; ?><sup><?php echo $eventSuffix; ?></sup> <?php echo $eventMonth; echo ' '; echo $eventYear; ?></a></p>
+				<p class="left">
+                    <?php if ($eventIsInPast) : ?>
+                        <i class="icon-clock"></i>
+                        TBC
+                    <?php else: ?>
+                    <a href="event.ics" download>
+                        <i class="icon-clock"></i>
+                        <?php echo $eventDay; ?><sup><?php echo $eventSuffix; ?></sup>
+                        <?php echo $eventMonth; echo ' '; echo $eventYear; ?>
+                    </a>
+                    <?php endif; ?>
+                </p>
 				<p class="middle"><a href="<?php echo $eventLocationMapLink; ?>"><i class="icon-location"></i><?php echo $eventLocation; ?></a></p>
 				<p class="right"><i class="icon-pound"></i>Free</p>
 			</div>
-        <?php if (strlen($eventUrl) > 0) { ?>
+        <?php if (strlen($eventUrl) > 0 && !$eventIsInPast) { ?>
             <a href="<?php echo $eventUrl; ?>" class="cta-primary">Get tickets</a>
         <?php } else { ?>
             <a class="cta-primary">Tickets coming soon</a>
@@ -34,7 +45,7 @@
 				<li><a href="#top" class="exempt"><i class="icon-home"></i></a></li>
 				<li><a href="about" class="<?php echo $_SERVER['REQUEST_URI'] == '/' || $_SERVER['REQUEST_URI'] == '/about' ? 'active' : ''; ?>">About <span class="hide-mobile">B &amp; W Meet</span></a></li>
 				<li><a href="who" class="<?php echo $_SERVER['REQUEST_URI'] == '/who' ? 'active' : ''; ?>">Who<span class="hide-mobile"> are we</span>?</a></li>
-				<li><a href="code-of-conduct" class="<?php echo $_SERVER['REQUEST_URI'] == '/code-of-conduct' ? 'active' : ''; ?>"><span class="hide-mobile">Code of </span>Conduct</a></li>				
+				<li><a href="code-of-conduct" class="<?php echo $_SERVER['REQUEST_URI'] == '/code-of-conduct' ? 'active' : ''; ?>"><span class="hide-mobile">Code of </span>Conduct</a></li>
                 <!--<li><a href="sponsors" class="<?php echo $_SERVER['REQUEST_URI'] == '/sponsors' ? 'active' : ''; ?>">Sponsor</a></li>-->
 			</ul>
 		</nav>

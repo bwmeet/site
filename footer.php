@@ -1,4 +1,4 @@
-        <?php if (strlen($eventUrl) > 0) { ?>
+        <?php if (strlen($eventUrl) > 0 && !$eventIsInPast) { ?>
         <div class="join-us cf">
             <div class="constrained">
                 <div>
