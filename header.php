@@ -14,8 +14,8 @@
 		<header id="top">
 			<img src="images/logo.svg" alt="The B &amp; W Meet logo" class="logo circle" width="180" height="180">
 			<p class="strapline">
-				<em>A local meetup in Bournemouth</em>
-				for creatives, developers &amp; tech enthusiasts
+				<em>A meetup in Bournemouth</em>
+				for creatives, developers &amp; web peeps
 			</p>
 			<div class="information">
 				<p class="left">
@@ -46,6 +46,5 @@
 				<li><a href="about" class="<?php echo $_SERVER['REQUEST_URI'] == '/' || $_SERVER['REQUEST_URI'] == '/about' ? 'active' : ''; ?>">About <span class="hide-mobile">B &amp; W Meet</span></a></li>
 				<li><a href="who" class="<?php echo $_SERVER['REQUEST_URI'] == '/who' ? 'active' : ''; ?>">Who<span class="hide-mobile"> are we</span>?</a></li>
 				<li><a href="code-of-conduct" class="<?php echo $_SERVER['REQUEST_URI'] == '/code-of-conduct' ? 'active' : ''; ?>"><span class="hide-mobile">Code of </span>Conduct</a></li>
-                <!--<li><a href="sponsors" class="<?php echo $_SERVER['REQUEST_URI'] == '/sponsors' ? 'active' : ''; ?>">Sponsor</a></li>-->
 			</ul>
 		</nav>

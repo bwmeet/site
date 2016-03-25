@@ -3,7 +3,7 @@
             <div class="constrained">
                 <div>
                     <h3>Interested in joining us?</h3>
-                    <p>Grab your free ticket and get involved with the local community</p>
+                    <p>Grab your free ticket and get involved with your local community</p>
                 </div>
                 <a href="<?php echo $eventUrl; ?>" class="cta-tertiary">Get tickets</a>
             </div>
