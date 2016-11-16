@@ -19,7 +19,7 @@ $eventIsInPast = false;
 
 // work out if event date is in past
 $date = strptime($eventDate, '%d/%m/%Y');
-$timestamp = mktime(0, 0, 0, $date['tm_mon']+1, $date['tm_mday'], $date['tm_year']+1900);
+$timestamp = mktime(23, 59, 59, $date['tm_mon']+1, $date['tm_mday'], $date['tm_year']+1900);
 
 if (time() > $timestamp) {
     $eventIsInPast = true;
