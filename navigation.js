@@ -19,7 +19,6 @@
             var page = document.querySelector('body > article.' + target);
             page.classList.remove('is-hidden');
 
-            var nav = document.getElementById('site-nav');
             var navPosition = page.offsetTop - 75;
 
             var oldY;
