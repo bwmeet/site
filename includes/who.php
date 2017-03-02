@@ -16,8 +16,8 @@
 	</div>
 	<div class="body">
 		<h2>Francesca Moores</h2>
-		<p>I’m a Project Manager at Redweb, so I know a little about a lot when it comes to web design &amp; build. Outside of digital, it’s lots of piano playing and a little bit of doodling.</p>
-		<p><a href="https://twitter.com/francescamoores" class="twitter-link">FrancescaMoores</a></p>
+		<p>Hey, I’m a Project Manager at 3 SIDED CUBE. Outside the mobile apps world, I’m into amateur digital illustration and playing my piano.</p>
+		<p><a href="https://twitter.com/frankiimoores" class="twitter-link">frankiimoores</a></p>
 	</div>
 </div>
 <div class="bio media">
@@ -26,7 +26,7 @@
 	</div>
 	<div class="body">
 		<h2>James Bliss</h2>
-		<p>Hi, I’m James a Lead Front End Developer at Redweb obsessed with perfect pixels and awesome code! I ❤ all things CSSy.</p>
+		<p>Hi, I’m James a Front End Developer at Lush obsessed with perfect pixels and awesome code! I ❤ all things CSSy.</p>
 		<p><a href="https://twitter.com/thejamesbliss" class="twitter-link">thejamesbliss</a></p>
 	</div>
 </div>
